@@ -1,6 +1,8 @@
 import React from 'react'
 import { Typography, Grid } from '@mui/material'
 import ProductListItem from './ProductListItem'
+import productsArray from './productsArray'
+import { ProductProps } from './ProductListItem'
 
 type Props = {}
 
@@ -17,33 +19,25 @@ const ProductList = (props: Props) => {
                 alignItems="center"
                 spacing={3}
             >
-                <Grid item xs={12} sm={6} md={4}>
-                    <ProductListItem
-                        name="iPone X"
-                        description="This is iPone X"
-                        capacity={64}
-                        price={500}
-                        type="phone"
-                    />
-                </Grid>
-                <Grid item xs={12} sm={6} md={4}>
-                    <ProductListItem
-                        name="iPone XII"
-                        description="This is iPone XII"
-                        capacity={64}
-                        price={1500}
-                        type="phone"
-                    />
-                </Grid>
-                <Grid item xs={12} sm={6} md={4}>
-                    <ProductListItem
-                        name="iPone 7"
-                        description="This is iPone X"
-                        capacity={32}
-                        price={300}
-                        type="phone"
-                    />
-                </Grid>
+                {productsArray.map(
+                    ({
+                        name,
+                        description,
+                        capacity,
+                        price,
+                        type,
+                    }: ProductProps) => (
+                        <Grid item xs={12} sm={6} md={4}>
+                            <ProductListItem
+                                name={name}
+                                description={description}
+                                capacity={capacity}
+                                price={price}
+                                type={type}
+                            />
+                        </Grid>
+                    )
+                )}
             </Grid>
         </>
     )

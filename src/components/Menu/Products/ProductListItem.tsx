@@ -2,7 +2,7 @@ import React from 'react'
 import { Card, CardActions, Button, CardContent } from '@mui/material'
 import './ProductListItem.scss'
 
-type ProductProps = {
+export type ProductProps = {
     name: string
     description: string
     type: string
@@ -24,7 +24,7 @@ const ProductListItem = ({
                 <div className="product-description">{description}</div>
                 <div className="product-features">{type}</div>
                 <div className="product-features">{capacity} Gb</div>
-                <div className="product-prise">{price} $</div>
+                <div className="product-price">{price} $</div>
             </CardContent>
 
             <CardActions className="btn-wrap">
