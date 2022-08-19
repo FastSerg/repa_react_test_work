@@ -5,8 +5,8 @@ const productsArray = [
     description: "This is iPone X",
     type: "phone",
     capacity: 64,
-    price: 1000
-
+    price: 1000,
+    img: "/img/black_phone.jpg"
   },
   {
     id: 2,
@@ -14,8 +14,8 @@ const productsArray = [
     description: "This is iPone X",
     type: "phone",
     capacity: 128,
-    price: 700
-
+    price: 700,
+    img: "/img/blue_phone.jpg"
   },
   {
     id: 3,
@@ -23,8 +23,8 @@ const productsArray = [
     description: "This is iPone X",
     type: "phone",
     capacity: 64,
-    price: 1500
-
+    price: 1500,
+    img: "/img/gold_phone.jpg"
   },
   {
     id: 4,
@@ -32,8 +32,8 @@ const productsArray = [
     description: "This is iPone X",
     type: "phone",
     capacity: 32,
-    price: 750
-
+    price: 750,
+    img: "/img/gray_phone.jpg"
   },
   {
     id: 5,
@@ -41,8 +41,8 @@ const productsArray = [
     description: "This is iPone X",
     type: "phone",
     capacity: 32,
-    price: 1200
-
+    price: 1200,
+    img: "/img/pink_phone.jpg"
   },
   {
     id: 6,
@@ -50,8 +50,8 @@ const productsArray = [
     description: "This is iPone X",
     type: "phone",
     capacity: 128,
-    price: 1400
-
+    price: 1400,
+    img: "/img/red_phone.jpg"
   }
 ]
 
