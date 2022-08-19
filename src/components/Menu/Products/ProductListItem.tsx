@@ -22,12 +22,12 @@ const ProductListItem = ({
             <CardContent>
                 <h4 className="product-title">{name}</h4>
                 <div className="product-description">{description}</div>
-                <div className="product-features red">{type}</div>
+                <div className="product-features">{type}</div>
                 <div className="product-features">{capacity} Gb</div>
                 <div className="product-prise">{price} $</div>
             </CardContent>
 
-            <CardActions>
+            <CardActions className="btn-wrap">
                 <Button variant="contained">Add to cart</Button>
             </CardActions>
         </Card>
