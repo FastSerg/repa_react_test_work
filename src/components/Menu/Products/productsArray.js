@@ -1,5 +1,6 @@
 const productsArray = [
   {
+    id: 1,
     name: "iPone X",
     description: "This is iPone X",
     type: "phone",
@@ -8,6 +9,7 @@ const productsArray = [
 
   },
   {
+    id: 2,
     name: "iPone XS",
     description: "This is iPone X",
     type: "phone",
@@ -16,6 +18,7 @@ const productsArray = [
 
   },
   {
+    id: 3,
     name: "iPone 13 Pro",
     description: "This is iPone X",
     type: "phone",
@@ -24,6 +27,7 @@ const productsArray = [
 
   },
   {
+    id: 4,
     name: "iPone 8 plus",
     description: "This is iPone X",
     type: "phone",
@@ -32,6 +36,7 @@ const productsArray = [
 
   },
   {
+    id: 5,
     name: "iPone 13",
     description: "This is iPone X",
     type: "phone",
@@ -40,6 +45,7 @@ const productsArray = [
 
   },
   {
+    id: 6,
     name: "iPone 11Pro Max",
     description: "This is iPone X",
     type: "phone",

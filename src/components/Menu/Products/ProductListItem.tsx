@@ -3,6 +3,7 @@ import { Card, CardActions, Button, CardContent } from '@mui/material'
 import './ProductListItem.scss'
 
 export type ProductProps = {
+    id?: number
     name: string
     description: string
     type: string
@@ -11,6 +12,7 @@ export type ProductProps = {
 }
 
 const ProductListItem = ({
+    id,
     name,
     description,
     type,
