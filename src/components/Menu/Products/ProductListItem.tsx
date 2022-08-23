@@ -20,11 +20,13 @@ export type ProductProps = {
 
 type State = {
     count: number
+    color: string
 }
 
 class ProductListItem extends Component<ProductProps, State> {
     state = {
         count: 1,
+        color: 'green',
     }
 
     onDecrementClick = () => {
@@ -33,6 +35,11 @@ class ProductListItem extends Component<ProductProps, State> {
     onIncrementClick = () => {
         this.setState((prevState: State) => ({ count: prevState.count + 1 }))
     }
+
+    changeColor() {
+        this.setState((prevState: State) => ({ color: 'red' }))
+    }
+
     render() {
         const { name, description, type, capacity, price, img } = this.props
         return (
@@ -65,6 +72,10 @@ class ProductListItem extends Component<ProductProps, State> {
                             +
                         </Button>
                     </div>
+                    <p>Color: {this.state.color}</p>
+                    <button onClick={this.changeColor.bind(this)}>
+                        Change color
+                    </button>
                 </CardContent>
 
                 <CardActions className="btn-wrap">
