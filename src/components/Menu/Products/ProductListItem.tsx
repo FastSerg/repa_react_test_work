@@ -34,31 +34,43 @@ class ProductListItem extends Component<ProductProps, State> {
     //     }
     // }
 
+    onDecrementClick() {
+        this.setState((prevState: State) => ({ count: prevState.count - 1 }))
+    }
+    onIncrementClick() {
+        this.setState((prevState: State) => ({ count: prevState.count + 1 }))
+    }
     render() {
         const { name, description, type, capacity, price, img } = this.props
         return (
             <Card>
                 <CardContent>
                     <div className="product-img">
-                        <img src={this.props.img} alt="phone" />
+                        <img src={img} alt="phone" />
                     </div>
-                    <h4 className="product-title">{this.props.name}</h4>
-                    <div className="product-description">
-                        {this.props.description}
-                    </div>
-                    <div className="product-features">{this.props.type}</div>
-                    <div className="product-features">
-                        {this.props.capacity} Gb
-                    </div>
-                    <div className="product-price">{this.props.price} $</div>
+                    <h4 className="product-title">{name}</h4>
+                    <div className="product-description">{description}</div>
+                    <div className="product-features">{type}</div>
+                    <div className="product-features">{capacity} Gb</div>
+                    <div className="product-price">{price} $</div>
                     <div className="product-quantity">
-                        <Button variant="contained">-</Button>
+                        <Button
+                            variant="contained"
+                            onClick={this.onDecrementClick.bind(this)}
+                        >
+                            -
+                        </Button>
                         <TextField
                             size="small"
                             value={this.state.count}
                             variant="outlined"
                         />
-                        <Button variant="contained">+</Button>
+                        <Button
+                            variant="contained"
+                            onClick={this.onIncrementClick.bind(this)}
+                        >
+                            +
+                        </Button>
                     </div>
                 </CardContent>
 
