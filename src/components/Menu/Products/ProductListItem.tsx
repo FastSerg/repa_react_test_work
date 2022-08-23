@@ -27,10 +27,10 @@ class ProductListItem extends Component<ProductProps, State> {
         count: 1,
     }
 
-    onDecrementClick() {
+    onDecrementClick = () => {
         this.setState((prevState: State) => ({ count: prevState.count - 1 }))
     }
-    onIncrementClick() {
+    onIncrementClick = () => {
         this.setState((prevState: State) => ({ count: prevState.count + 1 }))
     }
     render() {
@@ -49,7 +49,7 @@ class ProductListItem extends Component<ProductProps, State> {
                     <div className="product-quantity">
                         <Button
                             variant="contained"
-                            onClick={() => this.onDecrementClick()}
+                            onClick={this.onDecrementClick}
                         >
                             -
                         </Button>
@@ -60,7 +60,7 @@ class ProductListItem extends Component<ProductProps, State> {
                         />
                         <Button
                             variant="contained"
-                            onClick={() => this.onIncrementClick()}
+                            onClick={this.onIncrementClick}
                         >
                             +
                         </Button>
