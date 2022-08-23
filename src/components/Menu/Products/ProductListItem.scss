@@ -28,3 +28,12 @@
 
   
 }
+
+.product-quantity {
+  display: flex;
+  margin-top: 10px;
+  justify-content: center;
+  input{
+    text-align: center;
+  }
+}
