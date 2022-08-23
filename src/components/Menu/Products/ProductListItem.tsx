@@ -35,6 +35,7 @@ class ProductListItem extends Component<ProductProps, State> {
     // }
 
     render() {
+        const { name, description, type, capacity, price, img } = this.props
         return (
             <Card>
                 <CardContent>
