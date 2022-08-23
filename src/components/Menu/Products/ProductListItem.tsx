@@ -20,28 +20,36 @@ export type ProductProps = {
 
 type State = {
     count: number
-    color: string
+    colorCondition: boolean
+    minInterval: number
+    maxInterval: number
 }
 
 class ProductListItem extends Component<ProductProps, State> {
     state = {
         count: 1,
-        color: 'green',
+        colorCondition: true,
+        minInterval: 1,
+        maxInterval: 10,
     }
 
     onDecrementClick = () => {
         this.setState((prevState: State) => ({ count: prevState.count - 1 }))
     }
+
     onIncrementClick = () => {
         this.setState((prevState: State) => ({ count: prevState.count + 1 }))
     }
 
     changeColor() {
-        this.setState((prevState: State) => ({ color: 'red' }))
+        this.setState((prevState: State) => ({
+            colorCondition: !prevState.colorCondition,
+        }))
     }
 
     render() {
         const { name, description, type, capacity, price, img } = this.props
+        const { count, colorCondition, minInterval, maxInterval } = this.state
         return (
             <Card>
                 <CardContent>
@@ -55,6 +63,7 @@ class ProductListItem extends Component<ProductProps, State> {
                     <div className="product-price">{price} $</div>
                     <div className="product-quantity">
                         <Button
+                            disabled={count <= minInterval}
                             variant="contained"
                             onClick={this.onDecrementClick}
                         >
@@ -62,17 +71,18 @@ class ProductListItem extends Component<ProductProps, State> {
                         </Button>
                         <TextField
                             size="small"
-                            value={this.state.count}
+                            value={count}
                             variant="outlined"
                         />
                         <Button
+                            disabled={count >= maxInterval}
                             variant="contained"
                             onClick={this.onIncrementClick}
                         >
                             +
                         </Button>
                     </div>
-                    <p>Color: {this.state.color}</p>
+                    <p>Color: {colorCondition ? 'green' : 'red'}</p>
                     <button onClick={this.changeColor.bind(this)}>
                         Change color
                     </button>
