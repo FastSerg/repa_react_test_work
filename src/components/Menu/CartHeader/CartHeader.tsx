@@ -1,12 +1,15 @@
 import React from 'react'
 
-type Props = {}
+type Props = {
+    totalPrice: number
+    totalCount: number
+}
 
-const CartHeader = (props: Props) => {
+const CartHeader = ({ totalPrice, totalCount }: Props) => {
     return (
         <div>
-            <div>0</div>
-            <div>$ 0</div>
+            <div>{totalCount}</div>
+            <div>${totalPrice}</div>
         </div>
     )
 }
