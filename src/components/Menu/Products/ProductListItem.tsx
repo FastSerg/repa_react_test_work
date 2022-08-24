@@ -28,17 +28,11 @@ const ProductListItem = ({
     img,
 }: ProductProps) => {
     const [count, setCount] = useState<number>(1)
-    const [color, setColor] = useState<string>('green')
 
     const onIncrementClick = () =>
         setCount((prevState: number) => prevState + 1)
     const onDecrementClick = () =>
         setCount((prevState: number) => prevState - 1)
-
-    const changeColor = () =>
-        setColor((prevState: string) =>
-            prevState === 'green' ? 'red' : 'green'
-        )
 
     return (
         <Card>
@@ -46,22 +40,28 @@ const ProductListItem = ({
                 <div className="product-img">
                     <img src={img} alt="phone" />
                 </div>
-                <h4 className={`product-title ${color}`}>{name}</h4>
+                <h4 className="product-title">{name}</h4>
                 <div className="product-description">{description}</div>
                 <div className="product-features">{type}</div>
                 <div className="product-features">{capacity} Gb</div>
                 <div className="product-price">{price} $</div>
                 <div className="product-quantity">
-                    <Button variant="contained" onClick={onDecrementClick}>
+                    <Button
+                        disabled={count <= 1}
+                        variant="contained"
+                        onClick={onDecrementClick}
+                    >
                         -
                     </Button>
                     <TextField size="small" value={count} variant="outlined" />
-                    <Button variant="contained" onClick={onIncrementClick}>
+                    <Button
+                        disabled={count >= 10}
+                        variant="contained"
+                        onClick={onIncrementClick}
+                    >
                         +
                     </Button>
                 </div>
-                <p>Color: {color}</p>
-                <button onClick={changeColor}>Change color</button>
             </CardContent>
 
             <CardActions className="btn-wrap">
