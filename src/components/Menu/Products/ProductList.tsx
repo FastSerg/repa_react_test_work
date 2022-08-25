@@ -4,9 +4,11 @@ import ProductListItem from './ProductListItem'
 import productsArray from './productsArray'
 import { ProductProps } from './ProductListItem'
 
-type Props = {}
+type Props = {
+    addProductToCart: () => void
+}
 
-const ProductList = (props: Props) => {
+const ProductList = ({ addProductToCart }: Props) => {
     return (
         <>
             <Typography variant="h4" textAlign={'center'} margin={3}>
@@ -37,6 +39,7 @@ const ProductList = (props: Props) => {
                                 price={price}
                                 type={type}
                                 img={img}
+                                addProductToCart={() => addProductToCart()}
                             />
                         </Grid>
                     )

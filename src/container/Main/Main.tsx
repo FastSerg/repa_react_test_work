@@ -1,13 +1,16 @@
 import { Container } from '@mui/system'
 import React from 'react'
 import ProductList from 'components/Menu/Products/ProductList'
-type Props = {}
 
-const Main = (props: Props) => {
+type Props = {
+    addProductToCart: () => void
+}
+
+const Main = ({ addProductToCart }: Props) => {
     return (
         <>
             <Container>
-                <ProductList />
+                <ProductList addProductToCart={() => addProductToCart()} />
             </Container>
         </>
     )
