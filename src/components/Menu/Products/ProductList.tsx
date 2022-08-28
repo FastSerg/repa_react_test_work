@@ -2,10 +2,20 @@ import React from 'react'
 import { Typography, Grid } from '@mui/material'
 import ProductListItem from './ProductListItem'
 import productsArray from './productsArray'
-import { ProductProps } from './ProductListItem'
+// import { ProductProps2 } from './ProductListItem'
+
+type ProductProps = {
+    id?: number
+    name: string
+    description: string
+    type: string
+    capacity: number
+    price: number
+    img: string
+}
 
 type Props = {
-    addProductToCart: () => void
+    addProductToCart: (productCount: number, productPrice: number) => void
 }
 
 const ProductList = ({ addProductToCart }: Props) => {
@@ -14,6 +24,7 @@ const ProductList = ({ addProductToCart }: Props) => {
             <Typography variant="h4" textAlign={'center'} margin={3}>
                 Product List
             </Typography>
+
             <Grid
                 container
                 direction="row"
@@ -39,7 +50,7 @@ const ProductList = ({ addProductToCart }: Props) => {
                                 price={price}
                                 type={type}
                                 img={img}
-                                addProductToCart={() => addProductToCart()}
+                                addProductToCart={addProductToCart}
                             />
                         </Grid>
                     )

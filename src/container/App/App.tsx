@@ -10,22 +10,21 @@ export type CartDataProps = {
 
 const App = () => {
     const [cartData, setCartData] = useState<CartDataProps>({
-        totalCount: 10,
-        totalPrice: 1110,
+        totalCount: 0,
+        totalPrice: 0,
     })
 
-    const addProductToCart = () =>
+    const addProductToCart = (productCount: number, productPrice: number) =>
         setCartData((prevState: CartDataProps) => ({
-            ...prevState,
-            totalCount: prevState.totalCount + cartData.totalCount,
-            totalPrice: prevState.totalCount + cartData.totalPrice,
+            totalCount: prevState.totalCount + productCount,
+            totalPrice: prevState.totalCount + productPrice * productCount,
         }))
 
     return (
         <>
             <CssBaseline />
             <Header cartData={cartData} />
-            <Main addProductToCart={() => addProductToCart()} />
+            <Main addProductToCart={addProductToCart} />
         </>
     )
 }

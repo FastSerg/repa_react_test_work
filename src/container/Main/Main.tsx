@@ -3,14 +3,14 @@ import React from 'react'
 import ProductList from 'components/Menu/Products/ProductList'
 
 type Props = {
-    addProductToCart: () => void
+    addProductToCart: (productCount: number, productPrice: number) => void
 }
 
 const Main = ({ addProductToCart }: Props) => {
     return (
         <>
             <Container>
-                <ProductList addProductToCart={() => addProductToCart()} />
+                <ProductList addProductToCart={addProductToCart} />
             </Container>
         </>
     )

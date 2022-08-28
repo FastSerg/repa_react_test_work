@@ -8,7 +8,7 @@ import {
 } from '@mui/material'
 import './ProductListItem.scss'
 
-export type ProductProps = {
+type ProductProps = {
     id?: number
     name: string
     description: string
@@ -16,7 +16,7 @@ export type ProductProps = {
     capacity: number
     price: number
     img: string
-    addProductToCart?: () => void
+    addProductToCart: (productCount: number, productPrice: number) => void
 }
 
 const ProductListItem = ({
@@ -65,9 +65,11 @@ const ProductListItem = ({
                     </Button>
                 </div>
             </CardContent>
-
             <CardActions className="btn-wrap">
-                <Button variant="contained" onClick={addProductToCart}>
+                <Button
+                    variant="contained"
+                    onClick={() => addProductToCart(count, price)}
+                >
                     Add to cart
                 </Button>
             </CardActions>
