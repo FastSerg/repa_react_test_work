@@ -17,7 +17,7 @@ const App = () => {
     const addProductToCart = (productCount: number, productPrice: number) =>
         setCartData((prevState: CartDataProps) => ({
             totalCount: prevState.totalCount + productCount,
-            totalPrice: prevState.totalCount + productPrice * productCount,
+            totalPrice: prevState.totalPrice + productPrice * productCount,
         }))
 
     return (
