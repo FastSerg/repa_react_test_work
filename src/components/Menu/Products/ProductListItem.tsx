@@ -68,7 +68,7 @@ const ProductListItem = ({
             <CardActions className="btn-wrap">
                 <Button
                     variant="contained"
-                    onClick={() => addProductToCart(2, 5)}
+                    onClick={() => addProductToCart(1, 5)}
                 >
                     Add to cart
                 </Button>
