@@ -1,15 +1,18 @@
 import React from 'react'
 
 type Props = {
-    totalPrice: number
-    totalCount: number
+    productsInCart: { [id: number]: number }
 }
 
-const CartHeader = ({ totalPrice, totalCount }: Props) => {
+const CartHeader = ({ productsInCart }: Props) => {
     return (
         <div>
-            <div>{totalCount}</div>
-            <div>${totalPrice}</div>
+            {Object.keys(productsInCart).map((productId) => (
+                <div>
+                    {/*@ts-ignore*/}
+                    {productId}: {productsInCart[productId]}
+                </div>
+            ))}
         </div>
     )
 }

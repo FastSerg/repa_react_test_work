@@ -11,13 +11,10 @@ import Menu from 'components/Menu/Menu'
 import CartHeader from 'components/Menu/CartHeader/CartHeader'
 
 type Props = {
-    cartData: {
-        totalPrice: number
-        totalCount: number
-    }
+    productsInCart: { [id: number]: number }
 }
 
-const Header = ({ cartData }: Props) => {
+const Header = ({ productsInCart }: Props) => {
     return (
         <AppBar position="static">
             <Container>
@@ -39,10 +36,7 @@ const Header = ({ cartData }: Props) => {
                         Fake Shop
                     </Typography>
                     <Menu />
-                    <CartHeader
-                        totalCount={cartData.totalCount}
-                        totalPrice={cartData.totalPrice}
-                    />
+                    <CartHeader productsInCart={productsInCart} />
                 </Toolbar>
             </Container>
         </AppBar>
