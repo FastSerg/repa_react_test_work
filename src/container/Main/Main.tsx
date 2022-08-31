@@ -3,7 +3,7 @@ import React from 'react'
 import ProductList from 'components/Menu/Products/ProductList'
 
 type Props = {
-    addProductToCart: (productCount: number, productPrice: number) => void
+    addProductToCart: (id: number, count: number) => void
 }
 
 const Main = ({ addProductToCart }: Props) => {

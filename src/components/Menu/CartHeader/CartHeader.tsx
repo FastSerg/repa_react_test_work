@@ -10,8 +10,7 @@ const CartHeader = ({ productsInCart }: Props) => {
         <div>
             {keys(productsInCart).map((productId) => (
                 <div key={productId}>
-                    {/*@ts-ignore*/}
-                    {productId}: {productsInCart[productId]}
+                    {productId}: {productsInCart[Number(productId)]}
                 </div>
             ))}
         </div>

@@ -15,7 +15,7 @@ type ProductProps = {
 }
 
 type Props = {
-    addProductToCart: (productCount: number, productPrice: number) => void
+    addProductToCart: (id: number, count: number) => void
 }
 
 const ProductList = ({ addProductToCart }: Props) => {
