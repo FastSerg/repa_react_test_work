@@ -9,7 +9,7 @@ import {
 import './ProductListItem.scss'
 
 type ProductProps = {
-    id?: number
+    id: number
     name: string
     description: string
     type: string
@@ -68,7 +68,7 @@ const ProductListItem = ({
             <CardActions className="btn-wrap">
                 <Button
                     variant="contained"
-                    onClick={() => addProductToCart(count, price)}
+                    onClick={() => addProductToCart(id, count)}
                 >
                     Add to cart
                 </Button>
