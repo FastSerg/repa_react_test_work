@@ -5,10 +5,13 @@ import { Routes, Route } from 'react-router-dom'
 import CartPage from 'pages/CartPage/CartPage'
 
 type Props = {
+    productsInCart: {
+        [id: number]: number
+    }
     addProductToCart: (productCount: number, productPrice: number) => void
 }
 
-const Main = ({ addProductToCart }: Props) => {
+const Main = ({ addProductToCart, productsInCart }: Props) => {
     return (
         <>
             <Container>
@@ -19,7 +22,10 @@ const Main = ({ addProductToCart }: Props) => {
                             <ProductList addProductToCart={addProductToCart} />
                         }
                     />
-                    <Route path="cart" element={<CartPage />} />
+                    <Route
+                        path="cart"
+                        element={<CartPage productsInCart={productsInCart} />}
+                    />
                 </Routes>
             </Container>
         </>
