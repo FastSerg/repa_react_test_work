@@ -21,7 +21,7 @@ type Props = {
 
 const ProductList = ({ addProductToCart }: Props) => {
     return (
-        <>
+        <div>
             <Typography variant="h4" textAlign={'center'} margin={3}>
                 Product List
             </Typography>
@@ -62,7 +62,7 @@ const ProductList = ({ addProductToCart }: Props) => {
                         )
                     )}
             </Grid>
-        </>
+        </div>
     )
 }
 
