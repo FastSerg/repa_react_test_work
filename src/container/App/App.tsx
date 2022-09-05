@@ -23,21 +23,19 @@ const App = () => {
     }
 
     const removeProductFromCart = (id: number) => {
-        setProductsInCart((prevState: ProductsInCartProps) => {
-            let prevProductInCar = { ...prevState }
-            delete prevProductInCar[id]
-            return prevProductInCar
-        })
+        setProductsInCart((prevState: ProductsInCartProps) =>
+            omit(prevState, [id])
+        )
     }
 
     return (
         <>
             <CssBaseline />
             <Header productsInCart={productsInCart} />
-            <button onClick={() => removeProductFromCart(2)}>DELETE</button>
             <Main
                 addProductToCart={addProductToCart}
                 productsInCart={productsInCart}
+                removeProductFromCart={removeProductFromCart}
             />
         </>
     )
