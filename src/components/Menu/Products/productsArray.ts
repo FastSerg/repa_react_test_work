@@ -6,6 +6,7 @@ export type Product = {
   capacity:number
   price:number
   img:string
+  category?:string
 }
 
 const productsArray:Product[] = [
@@ -16,7 +17,8 @@ const productsArray:Product[] = [
     type: "phone",
     capacity: 64,
     price: 1000,
-    img: "/img/black_phone.jpg"
+    img: "/img/black_phone.jpg",
+    category: 'phone'
   },
   {
     id: 2,
@@ -25,7 +27,9 @@ const productsArray:Product[] = [
     type: "phone",
     capacity: 128,
     price: 700,
-    img: "/img/blue_phone.jpg"
+    img: "/img/blue_phone.jpg",
+    category: 'phone'
+
   },
   {
     id: 3,
@@ -34,7 +38,9 @@ const productsArray:Product[] = [
     type: "phone",
     capacity: 64,
     price: 1500,
-    img: "/img/gold_phone.jpg"
+    img: "/img/gold_phone.jpg",
+    category: 'phone'
+
   },
   {
     id: 4,
@@ -43,7 +49,9 @@ const productsArray:Product[] = [
     type: "phone",
     capacity: 32,
     price: 750,
-    img: "/img/gray_phone.jpg"
+    img: "/img/gray_phone.jpg",
+    category: 'phone'
+
   },
   {
     id: 5,
@@ -52,7 +60,9 @@ const productsArray:Product[] = [
     type: "phone",
     capacity: 32,
     price: 1200,
-    img: "/img/pink_phone.jpg"
+    img: "/img/pink_phone.jpg",
+    category: 'phone'
+
   },
   {
     id: 6,
@@ -61,7 +71,9 @@ const productsArray:Product[] = [
     type: "phone",
     capacity: 128,
     price: 1400,
-    img: "/img/red_phone.jpg"
+    img: "/img/red_phone.jpg",
+    category: 'phone'
+
   }
 ]
 

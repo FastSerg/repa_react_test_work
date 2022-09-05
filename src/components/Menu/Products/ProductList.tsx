@@ -12,6 +12,7 @@ type ProductProps = {
     capacity: number
     price: number
     img: string
+    category?: string
 }
 
 type Props = {
@@ -32,30 +33,34 @@ const ProductList = ({ addProductToCart }: Props) => {
                 alignItems="center"
                 spacing={3}
             >
-                {productsArray.map(
-                    ({
-                        id,
-                        name,
-                        description,
-                        capacity,
-                        price,
-                        type,
-                        img,
-                    }: ProductProps) => (
-                        <Grid item xs={12} sm={6} md={4} key={id}>
-                            <ProductListItem
-                                id={id}
-                                name={name}
-                                description={description}
-                                capacity={capacity}
-                                price={price}
-                                type={type}
-                                img={img}
-                                addProductToCart={addProductToCart}
-                            />
-                        </Grid>
+                {productsArray
+                    .filter(
+                        ({ category }: ProductProps) => category === 'phone'
                     )
-                )}
+                    .map(
+                        ({
+                            id,
+                            name,
+                            description,
+                            capacity,
+                            price,
+                            type,
+                            img,
+                        }: ProductProps) => (
+                            <Grid item xs={12} sm={6} md={4} key={id}>
+                                <ProductListItem
+                                    id={id}
+                                    name={name}
+                                    description={description}
+                                    capacity={capacity}
+                                    price={price}
+                                    type={type}
+                                    img={img}
+                                    addProductToCart={addProductToCart}
+                                />
+                            </Grid>
+                        )
+                    )}
             </Grid>
         </>
     )
