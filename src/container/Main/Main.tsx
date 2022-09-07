@@ -3,6 +3,7 @@ import React from 'react'
 import ProductList from 'components/Menu/Products/ProductList'
 import { Routes, Route } from 'react-router-dom'
 import CartPage from 'pages/CartPage/CartPage'
+import Reviews from 'components/Reviews/Reviews'
 
 type Props = {
     productsInCart: {
@@ -30,7 +31,12 @@ const Main = ({
                     <Route
                         path="/"
                         element={
-                            <ProductList addProductToCart={addProductToCart} />
+                            <>
+                                <ProductList
+                                    addProductToCart={addProductToCart}
+                                />
+                                <Reviews />
+                            </>
                         }
                     />
                     <Route
