@@ -2,7 +2,6 @@ import React from 'react'
 import { Typography, Grid } from '@mui/material'
 import ProductListItem from './ProductListItem'
 import productsArray from './productsArray'
-// import { ProductProps2 } from './ProductListItem'
 
 type ProductProps = {
     id: number
@@ -21,7 +20,7 @@ type Props = {
 
 const ProductList = ({ addProductToCart }: Props) => {
     return (
-        <div>
+        <>
             <Typography variant="h4" textAlign={'center'} margin={3}>
                 Product List
             </Typography>
@@ -62,7 +61,7 @@ const ProductList = ({ addProductToCart }: Props) => {
                         )
                     )}
             </Grid>
-        </div>
+        </>
     )
 }
 

@@ -13,6 +13,8 @@ type Props = {
     }
     CartItem?: any
     removeProductFromCart?: (id: number) => void
+    incrementClickCartExtend?: (id: number) => void
+    decrementClickCartExtend?: (id: number) => void
 }
 
 function CartProductList({
@@ -20,6 +22,8 @@ function CartProductList({
     productsObject = getProductsObject(productsArray),
     CartItem = CartProductListItem,
     removeProductFromCart,
+    incrementClickCartExtend,
+    decrementClickCartExtend,
 }: Props) {
     return (
         <>
@@ -27,8 +31,10 @@ function CartProductList({
                 <CartItem
                     key={productId}
                     product={productsObject[parseInt(productId)]}
-                    nameproductCount={productsInCart[parseInt(productId)]}
+                    productCount={productsInCart[parseInt(productId)]}
                     removeProductFromCart={removeProductFromCart}
+                    incrementClickCartExtend={incrementClickCartExtend}
+                    decrementClickCartExtend={decrementClickCartExtend}
                 />
             ))}
         </>

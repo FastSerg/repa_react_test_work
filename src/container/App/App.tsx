@@ -3,6 +3,7 @@ import CssBaseline from '@mui/material/CssBaseline'
 import Header from 'container/Header/Header'
 import Main from 'container/Main/Main'
 import { omit } from 'lodash'
+import { StyledEngineProvider } from '@mui/material'
 
 export type ProductsInCartProps = {
     [id: number]: number
@@ -28,16 +29,30 @@ const App = () => {
         )
     }
 
+    const incrementClickCartExtend = (id: number) => {
+        setProductsInCart((prevState: ProductsInCartProps) => ({
+            ...prevState,
+            [id]: prevState[id] + 1,
+        }))
+    }
+    const decrementClickCartExtend = (id: number) => {
+        setProductsInCart((prevState: ProductsInCartProps) => ({
+            ...prevState,
+            [id]: prevState[id] - 1,
+        }))
+    }
     return (
-        <>
+        <StyledEngineProvider injectFirst>
             <CssBaseline />
             <Header productsInCart={productsInCart} />
             <Main
                 addProductToCart={addProductToCart}
                 productsInCart={productsInCart}
                 removeProductFromCart={removeProductFromCart}
+                decrementClickCartExtend={decrementClickCartExtend}
+                incrementClickCartExtend={incrementClickCartExtend}
             />
-        </>
+        </StyledEngineProvider>
     )
 }
 

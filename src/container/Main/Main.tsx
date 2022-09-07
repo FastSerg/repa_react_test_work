@@ -10,11 +10,15 @@ type Props = {
     }
     addProductToCart: (productCount: number, productPrice: number) => void
     removeProductFromCart: (id: number) => void
+    incrementClickCartExtend: (id: number) => void
+    decrementClickCartExtend: (id: number) => void
 }
 
 const Main = ({
     addProductToCart,
     productsInCart,
+    incrementClickCartExtend,
+    decrementClickCartExtend,
     removeProductFromCart,
 }: Props) => {
     return (
@@ -32,6 +36,12 @@ const Main = ({
                         element={
                             <CartPage
                                 productsInCart={productsInCart}
+                                incrementClickCartExtend={
+                                    incrementClickCartExtend
+                                }
+                                decrementClickCartExtend={
+                                    decrementClickCartExtend
+                                }
                                 removeProductFromCart={removeProductFromCart}
                             />
                         }

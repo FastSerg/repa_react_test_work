@@ -13,7 +13,7 @@ const Quantity = ({ count, onDecrementClick, onIncrementClick }: Props) => {
             <Button
                 disabled={count <= 1}
                 variant="contained"
-                onClick={() => onDecrementClick()}
+                onClick={onDecrementClick}
             >
                 -
             </Button>
@@ -21,7 +21,7 @@ const Quantity = ({ count, onDecrementClick, onIncrementClick }: Props) => {
             <Button
                 disabled={count >= 10}
                 variant="contained"
-                onClick={() => onIncrementClick()}
+                onClick={onIncrementClick}
             >
                 +
             </Button>

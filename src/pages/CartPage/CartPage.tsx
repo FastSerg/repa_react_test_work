@@ -6,18 +6,26 @@ import { Grid } from '@mui/material'
 
 type Props = {
     productsInCart: { [id: number]: number }
-
+    incrementClickCartExtend: (id: number) => void
     removeProductFromCart: (id: number) => void
+    decrementClickCartExtend: (id: number) => void
 }
 
-const CartPage = ({ productsInCart, removeProductFromCart }: Props) => {
+const CartPage = ({
+    productsInCart,
+    removeProductFromCart,
+    incrementClickCartExtend,
+    decrementClickCartExtend,
+}: Props) => {
     return (
-        <div>
+        <div style={{ padding: '30px 0' }}>
             <Grid container spacing={4}>
                 <CartProductList
                     productsInCart={productsInCart}
                     CartItem={CartProductListItemExtend}
                     removeProductFromCart={removeProductFromCart}
+                    incrementClickCartExtend={incrementClickCartExtend}
+                    decrementClickCartExtend={decrementClickCartExtend}
                 />
             </Grid>
 
