@@ -11,6 +11,7 @@ type Props = {
     count: number
     incrementClickCartExtend: (id: number) => void
     decrementClickCartExtend: (id: number) => void
+    changeProductQuantity: (id: number, count: number) => void
 }
 
 const CartProductListItemExtend = ({
@@ -20,6 +21,7 @@ const CartProductListItemExtend = ({
     incrementClickCartExtend,
     decrementClickCartExtend,
     removeProductFromCart,
+    changeProductQuantity,
 }: Props) => {
     return (
         <Grid item xs={12} sm={6}>
@@ -37,12 +39,18 @@ const CartProductListItemExtend = ({
                     <p>Count: {productCount}</p>
                     <Quantity
                         onIncrementClick={() =>
-                            incrementClickCartExtend(product.id)
+                            changeProductQuantity(product.id, productCount + 1)
                         }
                         onDecrementClick={() =>
-                            decrementClickCartExtend(product.id)
+                            productCount === 1
+                                ? removeProductFromCart(product.id)
+                                : changeProductQuantity(
+                                      product.id,
+                                      productCount - 1
+                                  )
                         }
                         count={productCount}
+                        minCount={0}
                     />
                     <Button
                         variant="outlined"

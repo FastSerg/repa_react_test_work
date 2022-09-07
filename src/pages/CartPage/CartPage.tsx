@@ -9,6 +9,7 @@ type Props = {
     incrementClickCartExtend: (id: number) => void
     removeProductFromCart: (id: number) => void
     decrementClickCartExtend: (id: number) => void
+    changeProductQuantity: (id: number, count: number) => void
 }
 
 const CartPage = ({
@@ -16,6 +17,7 @@ const CartPage = ({
     removeProductFromCart,
     incrementClickCartExtend,
     decrementClickCartExtend,
+    changeProductQuantity,
 }: Props) => {
     return (
         <div style={{ padding: '30px 0' }}>
@@ -26,6 +28,7 @@ const CartPage = ({
                     removeProductFromCart={removeProductFromCart}
                     incrementClickCartExtend={incrementClickCartExtend}
                     decrementClickCartExtend={decrementClickCartExtend}
+                    changeProductQuantity={changeProductQuantity}
                 />
             </Grid>
 

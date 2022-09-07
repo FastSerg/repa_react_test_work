@@ -12,6 +12,7 @@ type Props = {
     removeProductFromCart: (id: number) => void
     incrementClickCartExtend: (id: number) => void
     decrementClickCartExtend: (id: number) => void
+    changeProductQuantity: (id: number, count: number) => void
 }
 
 const Main = ({
@@ -20,6 +21,7 @@ const Main = ({
     incrementClickCartExtend,
     decrementClickCartExtend,
     removeProductFromCart,
+    changeProductQuantity,
 }: Props) => {
     return (
         <>
@@ -43,6 +45,7 @@ const Main = ({
                                     decrementClickCartExtend
                                 }
                                 removeProductFromCart={removeProductFromCart}
+                                changeProductQuantity={changeProductQuantity}
                             />
                         }
                     />
