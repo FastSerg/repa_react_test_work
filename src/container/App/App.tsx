@@ -16,7 +16,6 @@ type ProductsLikeStateProps = {
 const App = () => {
     const [productsInCart, setProductsInCart] = useState<ProductsInCartProps>({
         1: 1,
-        // 2: 1,
     })
 
     const [productsLikeState, setProductsLikeState] =
@@ -27,8 +26,9 @@ const App = () => {
 
     const changeLike = (id: number) => {
         setProductsLikeState((prevState: ProductsLikeStateProps) => ({
-            ...prevState,
+            // ...prevState,
             [id]: prevState[id] !== (true || false) ? true : false,
+            // [id]: prevState[id] === false,
         }))
     }
 
