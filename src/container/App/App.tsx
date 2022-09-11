@@ -9,11 +9,28 @@ export type ProductsInCartProps = {
     [id: number]: number
 }
 
+type ProductsLikeStateProps = {
+    [id: number]: boolean
+}
+
 const App = () => {
     const [productsInCart, setProductsInCart] = useState<ProductsInCartProps>({
         1: 1,
         // 2: 1,
     })
+
+    const [productsLikeState, setProductsLikeState] =
+        useState<ProductsLikeStateProps>({
+            1: false,
+            2: false,
+        })
+
+    const changeLike = (id: number) => {
+        setProductsLikeState((prevState: ProductsLikeStateProps) => ({
+            ...prevState,
+            [id]: prevState[id] !== (true || false) ? true : false,
+        }))
+    }
 
     const addProductToCart = (id: number, count: number) => {
         setProductsInCart((prevState: ProductsInCartProps) => ({
@@ -60,6 +77,8 @@ const App = () => {
                 decrementClickCartExtend={decrementClickCartExtend}
                 incrementClickCartExtend={incrementClickCartExtend}
                 changeProductQuantity={changeProductQuantity}
+                productsLikeState={productsLikeState}
+                changeLike={changeLike}
             />
         </StyledEngineProvider>
     )

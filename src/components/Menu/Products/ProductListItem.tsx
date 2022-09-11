@@ -14,6 +14,7 @@ type ProductProps = {
     price: number
     img: string
     addProductToCart: (productCount: number, productPrice: number) => void
+    changeLike: (id: number) => void
     isLike?: boolean
 }
 
@@ -26,6 +27,7 @@ const ProductListItem = ({
     price,
     img,
     addProductToCart,
+    changeLike,
     isLike = false,
 }: ProductProps) => {
     const [count, setCount] = useState<number>(1)
@@ -41,7 +43,7 @@ const ProductListItem = ({
                 <div className="product-img">
                     <img src={img} alt="phone" />
                 </div>
-                <Button variant="outlined">
+                <Button variant="outlined" onClick={() => changeLike(id)}>
                     {isLike ? <FavoriteIcon /> : <FavoriteBorderIcon />}
                 </Button>
                 <h4 className="product-title">{name}</h4>

@@ -9,6 +9,12 @@ type Props = {
     productsInCart: {
         [id: number]: number
     }
+
+    productsLikeState: {
+        [id: number]: boolean
+    }
+
+    changeLike: (id: number) => void
     addProductToCart: (productCount: number, productPrice: number) => void
     removeProductFromCart: (id: number) => void
     incrementClickCartExtend: (id: number) => void
@@ -23,6 +29,8 @@ const Main = ({
     decrementClickCartExtend,
     removeProductFromCart,
     changeProductQuantity,
+    productsLikeState,
+    changeLike,
 }: Props) => {
     return (
         <>
@@ -34,6 +42,8 @@ const Main = ({
                             <>
                                 <ProductList
                                     addProductToCart={addProductToCart}
+                                    productsLikeState={productsLikeState}
+                                    changeLike={changeLike}
                                 />
                                 <Reviews />
                             </>
